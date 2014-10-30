@@ -21,6 +21,9 @@ Preload.prototype = {
         
         // Load 3 34x24 px frames frome the spritesheet
         this.load.spritesheet('bird', 'assets/bird.png', 34, 24, 3);
+        
+        // Load 2 54x320 px frames from pipes spritesheet
+        this.load.spritesheet('pipe', 'assets/pipes.png', 54, 320, 2);
     },
     create: function() {
         this.asset.cropEnabled = false;

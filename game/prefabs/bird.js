@@ -23,7 +23,7 @@ Bird.prototype.constructor = Bird;
 
 Bird.prototype.update = function() {
     // Increse angle untill it reaches 90 degrees
-    if (this.angle < 90)
+    if (this.angle < 90 && this.alive)
     {
         this.angle += 2.5;
     }
@@ -35,6 +35,6 @@ Bird.prototype.flap = function() {
     
     // Rotate the bird when flapping
     this.game.add.tween(this).to({angle: -40}, 100).start();
-}
+};
 
 module.exports = Bird;

@@ -12,6 +12,7 @@ var Bird = function(game, x, y, frame) {
     
     // Enable Physics on the bird
     this.game.physics.arcade.enableBody(this);
+    this.body.allowGravity = false;
     
     this.checkWorldBounds = true;
     this.outOfBoundsKill = true;

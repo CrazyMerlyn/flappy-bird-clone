@@ -26,6 +26,9 @@ Bird.prototype.update = function() {
 Bird.prototype.flap = function() {
     // Give the bird an upvard velocity
     this.body.velocity.y = -400;
+    
+    // Rotate the bird when flapping
+    this.game.add.tween(this).to({angle: -40}, 100).start();
 }
 
 module.exports = Bird;

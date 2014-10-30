@@ -1,5 +1,9 @@
 
 'use strict';
+
+var Bird = require('../prefabs/bird');
+var Ground = require('../prefabs/ground');
+
 function Menu() {}
 
 Menu.prototype = {
@@ -10,10 +14,9 @@ Menu.prototype = {
       // Add background to the game
       this.background = this.game.add.sprite(0, 0, 'background');
       
-      // Add the ground sprite as a tile
-      // And start Scrolling in the negative x direction
-      this.ground = this.game.add.tileSprite(0, 400, 335, 112, 'ground');
-      this.ground.autoScroll(-200, 0);
+      // Add the ground sprite to the game
+      this.ground = new Ground(this.game);
+      this.game.add.existing(this.ground);
       
       // A group to hold the the title and the bird
       this.titleGroup = this.game.add.group();
@@ -23,13 +26,9 @@ Menu.prototype = {
       this.titleGroup.add(this.title);
       
       // Create and add the bird sprite to the title group
-      this.bird = this.game.add.sprite(200, 5, 'bird');
+      this.bird = new Bird(this.game, 200, 5);
+      this.game.add.existing(this.bird);
       this.titleGroup.add(this.bird);
-      
-      // Add an animation to the bird
-      // and play it in a loop (@12 frames/sec)
-      this.bird.animations.add('flap');
-      this.bird.animations.play('flap', 12, true);
       
       // Set the origin of the title group
       this.titleGroup.x = 30;

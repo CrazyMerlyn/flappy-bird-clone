@@ -18,9 +18,11 @@ Bird.prototype = Object.create(Phaser.Sprite.prototype);
 Bird.prototype.constructor = Bird;
 
 Bird.prototype.update = function() {
-
-    // write your prefab's specific update code here
-
+    // Increse angle untill it reaches 90 degrees
+    if (this.angle < 90)
+    {
+        this.angle += 2.5;
+    }
 };
 
 Bird.prototype.flap = function() {

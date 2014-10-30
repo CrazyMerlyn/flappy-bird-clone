@@ -11,7 +11,10 @@ var Bird = function(game, x, y, frame) {
     this.animations.play('flap', 12, true);
     
     // Enable Physics on the bird
-    this.game.physics.arcade.enableBody(this);  
+    this.game.physics.arcade.enableBody(this);
+    
+    this.checkWorldBounds = true;
+    this.outOfBoundsKill = true;
 };
 
 Bird.prototype = Object.create(Phaser.Sprite.prototype);

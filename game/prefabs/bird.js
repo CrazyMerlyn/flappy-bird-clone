@@ -6,6 +6,9 @@ var Bird = function(game, x, y, frame) {
     // Set the sprite's anchor to the center
     this.anchor.setTo(0.5, 0.5);
     
+    // Set a bird to be dead by default
+    this.alive = false;
+    
     // Add and play animation
     this.animations.add('flap');
     this.animations.play('flap', 12, true);

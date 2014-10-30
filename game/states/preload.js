@@ -24,6 +24,12 @@ Preload.prototype = {
         
         // Load 2 54x320 px frames from pipes spritesheet
         this.load.spritesheet('pipe', 'assets/pipes.png', 54, 320, 2);
+        
+        this.load.image('instructions', 'assets/instructions.png');
+        this.load.image('getReady', 'assets/get-ready.png');
+        
+        this.load.bitmapFont('flappyfont', 'assets/fonts/flappyfont/flappyfont.png',
+                            'assets/fonts/flappyfont/flappyfont.fnt');
     },
     create: function() {
         this.asset.cropEnabled = false;

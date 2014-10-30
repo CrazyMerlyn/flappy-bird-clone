@@ -1,7 +1,6 @@
 
 'use strict';
 
-var Bird = require('../prefabs/bird');
 var Ground = require('../prefabs/ground');
 
 function Menu() {}
@@ -26,9 +25,12 @@ Menu.prototype = {
       this.titleGroup.add(this.title);
       
       // Create and add the bird sprite to the title group
-      this.bird = new Bird(this.game, 200, 5);
-      this.game.add.existing(this.bird);
+      this.bird = this.game.add.sprite(200, 5, 'bird');
       this.titleGroup.add(this.bird);
+      
+      // Add animation to the bird
+      this.bird.animations.add('flap');
+      this.bird.animations.play('flap', 12, true);
       
       // Set the origin of the title group
       this.titleGroup.x = 30;

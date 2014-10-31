@@ -13,6 +13,9 @@ var Bird = function(game, x, y, frame) {
     this.animations.add('flap');
     this.animations.play('flap', 12, true);
     
+    // Sound made when the bird flaps
+    this.flapSound = this.game.add.audio('flap');
+    
     // Enable Physics on the bird
     this.game.physics.arcade.enableBody(this);
     this.body.allowGravity = false;
@@ -33,6 +36,7 @@ Bird.prototype.update = function() {
 };
 
 Bird.prototype.flap = function() {
+    this.flapSound.play();
     // Give the bird an upvard velocity
     this.body.velocity.y = -400;
     

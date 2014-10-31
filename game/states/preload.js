@@ -28,6 +28,11 @@ Preload.prototype = {
         this.load.image('instructions', 'assets/instructions.png');
         this.load.image('getReady', 'assets/get-ready.png');
         
+        this.load.image('scoreboard', 'assets/scoreboard.png');
+        this.load.image('gameover', 'assets/gameover.png');
+        this.load.image('particle', 'assets/particle.png');
+        this.load.spritesheet('medals', 'assets/medals.png', 44, 46, 2);
+        
         // Sounds used in the game
         this.load.audio('score', 'assets/score.wav');
         this.load.audio('flap', 'assets/flap.wav');
